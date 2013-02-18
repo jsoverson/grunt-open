@@ -30,22 +30,19 @@ Install this grunt plugin next to your project's [Gruntfile][getting_started] wi
 
 ## Configuration
 
-This is a very simple task and takes only one configuration parameter
-that can be specified under two names, `url` or `file`. They both issue
-the same open command to open the destination with your system's default
-application, but are useful for readability.
+This is a very simple task and takes only one configuration parameter, `path`.
 
 ```js
 grunt.initConfig({
   open : {
     dev : {
-      url : 'http://127.0.0.1:8888/src'
+      path: 'http://127.0.0.1:8888/src'
     },
     google : {
-      url : 'http://google.com/'
+      path : 'http://google.com/'
     },
     file : {
-      file : '/etc/hosts'
+      path : '/etc/hosts'
     }
   }
 })
@@ -62,7 +59,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
- - 0.1.0 initial releas
+ - 0.2.0 grunt 0.4.0 support, added and preferring `path` parameter.
+ - 0.1.0 initial release
 
 ## License
 
