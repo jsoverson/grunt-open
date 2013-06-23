@@ -15,14 +15,14 @@ $ npm install --save grunt-open
 This is immediately useful as part of your task chain between `server` and `watch`
 
 ```js
-grunt.registerTask('default', 'server open watch');
+grunt.registerTask('default', ['server', 'open', 'watch']);
 ```
 
 You can specify different configurations so that you can set up task chains like
 
 ```js
-grunt.registerTask('dev', 'server open:dev watch');
-grunt.registerTask('build', 'build server open:build watch:build');
+grunt.registerTask('dev', ['server', 'open:dev', 'watch']);
+grunt.registerTask('build', ['build', 'server', 'open:build', 'watch:build');
 ```
 
 ## Getting Started
