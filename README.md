@@ -22,7 +22,7 @@ You can specify different configurations so that you can set up task chains like
 
 ```js
 grunt.registerTask('dev', 'server open:dev watch');
-grunt.registerTask('dev', 'build server open:build watch:build');
+grunt.registerTask('build', 'build server open:build watch:build');
 ```
 
 ## Getting Started
