@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       file : {
         file : '/etc/hosts'
       }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');

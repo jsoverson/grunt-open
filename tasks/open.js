@@ -15,5 +15,9 @@ module.exports = function(grunt) {
     var dest = this.data.url || this.data.file || this.data.path;
 
     open(dest);
+
+    // give the spawn some time before its parent (us) dies
+    // https://github.com/onehealth/grunt-open/issues/6
+    setTimeout(this.async(), 200);
   });
 };
