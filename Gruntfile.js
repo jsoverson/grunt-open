@@ -12,10 +12,12 @@ module.exports = function(grunt) {
     },
     open : {
       dev : {
-        path : 'http://127.0.0.1/~jsoverson/'
+        path : 'http://127.0.0.1/~jsoverson/',
+        app : 'firefox'
       },
       google : {
-        url : 'http://google.com/'
+        url : 'http://google.com/',
+        app : 'Google Chrome'
       },
       file : {
         file : '/etc/hosts'
