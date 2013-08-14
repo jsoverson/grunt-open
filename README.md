@@ -4,33 +4,30 @@ Open urls and files from a grunt task
 
 ## Installation
 
-Install alongside your Gruntfile
+Install using npm in the root of your project directory (where your package.json and Gruntfile.js are located)
 
 ```bash
-$ npm install --save grunt-open
+npm install --save-dev grunt-open
 ```
 
 ## Usage
 
-This is immediately useful as part of your task chain between `server` and `watch`
+This is used as part of your grunt tasks, between the `server` and `watch` tasks
 
 ```js
 grunt.registerTask('default', ['server', 'open', 'watch']);
 ```
 
-You can specify different configurations so that you can set up task chains like
+You can specify different configurations so that you can set up task chains (see the configuration below for this example's config)
 
 ```js
 grunt.registerTask('dev', ['server', 'open:dev', 'watch']);
 grunt.registerTask('build', ['build', 'server', 'open:build', 'watch:build');
 ```
 
-## Getting Started
-Install this grunt plugin next to your project's [Gruntfile][getting_started] with: `npm install grunt-open`
+## Gruntfile Configuration
 
-## Configuration
-
-This is a very simple task and takes two configuration parameter, `path` (required) and `app` (optionnal). If app is unused, default application will launch. 
+This is a very simple task and takes two configuration parameters, `path` (required) and `app` (optional). If `app` is not specified, the default system browser will be launched
 
 ```js
 grunt.initConfig({
@@ -39,7 +36,7 @@ grunt.initConfig({
       path: 'http://127.0.0.1:8888/src',
       app: 'Google Chrome'
     },
-    google : {
+    build : {
       path : 'http://google.com/',
       app: 'Firefox'
     },
@@ -61,6 +58,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ - 0.2.2 added `app` parameter.
  - 0.2.0 grunt 0.4.0 support, added and preferring `path` parameter.
  - 0.1.0 initial release
 
