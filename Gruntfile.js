@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -24,8 +26,28 @@ module.exports = function(grunt) {
       },
       file : {
         file : '/etc/hosts'
+      },
+      onOpen: {
+        file: path.join(__dirname, 'LICENSE'),
+        options: {
+          openOn: 'openOnTrigger'
+        }
+      },
+      neverTrigger: {
+        file: path.join(__dirname, '.jshintrc'),
+        options: {
+          openOn: 'nevertriggered'
+        }
       }
     }
+  });
+
+  grunt.registerTask('mockOnTrigger', function () {
+    var done = this.async();
+    setTimeout(function () {
+      grunt.event.emit('openOnTrigger');
+      done();
+    }, 100);
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -34,6 +56,8 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // Default task.
-  grunt.registerTask('default', ['jshint','open']);
+  grunt.registerTask('default', ['jshint', 'test']);
 
+  // test
+  grunt.registerTask('test', ['open', 'mockOnTrigger']);
 };

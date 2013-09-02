@@ -50,6 +50,37 @@ grunt.loadNpmTasks('grunt-open');
 
 ```
 
+## Options
+
+#### openOn (optional)
+Type: `String`
+
+While it may not be common, you may want to delay the openning of your `path` at a later time of the grunt process. The option `openOn` allows you to define an event (coming through from [grunt.event](http://gruntjs.com/api/grunt.event)) that would signal the expected triggering of `open`. Example:
+
+```js
+grunt.initConfig({
+  open: {
+    delayed: {
+      path: 'http://localhost:3000'
+      app: 'Google Chrome'
+      options: {
+        openOn: 'serverListening'
+      }
+    }
+  }
+});
+
+grunt.registerTask('server', function () {
+  var server = require('myServer');
+  server.listen(3000, function (err) {
+    if (!err) {
+      grunt.log.writeln('Server started');
+      grunt.event.emit('serverListening'); // triggers open:delayed
+    }
+  });
+})
+```
+
 [grunt]: https://github.com/gruntjs/grunt
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 
