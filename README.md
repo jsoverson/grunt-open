@@ -100,6 +100,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+ - 0.2.3 merged support for functions in config, added delay, merged openOn
  - 0.2.2 added `app` parameter.
  - 0.2.0 grunt 0.4.0 support, added and preferring `path` parameter.
  - 0.1.0 initial release
