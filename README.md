@@ -42,6 +42,11 @@ grunt.initConfig({
     },
     file : {
       path : '/etc/hosts'
+    },
+    custom: {
+      path : function () {
+        return grunt.option('path');
+      } 
     }
   }
 })
