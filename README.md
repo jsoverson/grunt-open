@@ -57,10 +57,10 @@ grunt.loadNpmTasks('grunt-open');
 
 ## Options
 
-#### openOn (optional)
+#### openOn
 Type: `String`
 
-While it may not be common, you may want to delay the openning of your `path` at a later time of the grunt process. The option `openOn` allows you to define an event (coming through from [grunt.event](http://gruntjs.com/api/grunt.event)) that would signal the expected triggering of `open`. Example:
+While it may not be common, you may want to delay the opening of your `path` at a later time of the grunt process. The option `openOn` allows you to define an event (coming through from [grunt.event](http://gruntjs.com/api/grunt.event)) that would signal the expected triggering of `open`. Example:
 
 ```js
 grunt.initConfig({
@@ -85,6 +85,12 @@ grunt.registerTask('server', function () {
   });
 })
 ```
+
+#### delay
+Type : `Number`
+
+Set a delay for the open. *Note:* This task moves on immediately. If this is the last task in your chain you run the
+risk of node exiting before your open is called.
 
 [grunt]: https://github.com/gruntjs/grunt
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md

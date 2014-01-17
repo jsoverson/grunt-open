@@ -22,6 +22,8 @@ module.exports = function(grunt) {
       grunt.fail.warn(error);
     }
 
+    options.delay = options.delay || 0;
+
     // allows to wait for server start up before opening
     var openOn = options.openOn;
     if (openOn) {
@@ -29,7 +31,9 @@ module.exports = function(grunt) {
         open(dest, application, callback);
       });
     } else {
-      open(dest, application, callback);
+      setTimeout(function(){
+        open(dest, application, callback);
+      }, options.delay);
     }
 
     // give the spawn some time before its parent (us) dies

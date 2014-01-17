@@ -22,13 +22,16 @@ module.exports = function(grunt) {
         app : 'Google Chrome'
       },
       default_app : {
-        url : 'http://example.com/'
+        url : 'http://example.com/',
+        options : {
+          delay : 100
+        }
       },
       file : {
         file : '/etc/hosts'
       },
       onOpen: {
-        file: path.join(__dirname, 'LICENSE'),
+        file: './LICENSE',
         options: {
           openOn: 'openOnTrigger'
         }
