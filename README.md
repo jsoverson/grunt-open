@@ -107,8 +107,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright OneHealth Solutions, Inc
-
-Written by Jarrod Overson
-
-Licensed under the Apache 2.0 license.
+MIT License, see LICENSE for details.
