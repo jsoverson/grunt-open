@@ -66,8 +66,8 @@ While it may not be common, you may want to delay the opening of your `path` at 
 grunt.initConfig({
   open: {
     delayed: {
-      path: 'http://localhost:3000'
-      app: 'Google Chrome'
+      path: 'http://localhost:3000',
+      app: 'Google Chrome',
       options: {
         openOn: 'serverListening'
       }
