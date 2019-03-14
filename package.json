@@ -1,7 +1,7 @@
 {
   "name": "grunt-open",
   "description": "Open urls and files from a grunt task",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "homepage": "https://github.com/onehealth/grunt-open",
   "author": {
     "name": "Jarrod Overson",
