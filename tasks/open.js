@@ -8,7 +8,7 @@
 
 'use strict';
 
-var open = require('open');
+var open = require('opn');
 
 module.exports = function(grunt) {
   grunt.registerMultiTask('open', 'Open urls and files from a grunt task', function() {
